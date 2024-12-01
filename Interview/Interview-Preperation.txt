@@ -1,1 +1,52 @@
+1. What is Gradle?
+   Gradle is an open-source build automation tool that is designed to be flexible enough to build almost any type of software.
+   It combines the best features of Ant and Maven and introduces a Groovy-based DSL for describing builds.
 
+2. Explain the Gradle build lifecycle.
+   The Gradle build lifecycle consists of three main phases:
+     1. Initialization: Determines which projects are to participate in the build.
+     2. Configuration: Evaluates the build scripts of all projects, creating and configuring the task graph.
+     3. Execution: Executes the tasks in the order determined by their dependencies.
+
+3. What is the Gradle Daemon?
+   The Gradle Daemon is a background process that improves the performance of Gradle builds by keeping the build environment warm. It reduces the startup time for subsequent builds.
+
+4. How do you run a Gradle build?
+   You can run a Gradle build by using the `gradle build` command in the terminal.
+
+5. What is the Gradle Wrapper?
+   The Gradle Wrapper is a script that allows you to run Gradle builds without requiring that Gradle is installed on your system. It ensures that the project is built with a specific Gradle version.
+
+6. How can you define a custom task in Gradle?
+   You can define a custom task in Gradle using the `task` keyword followed by the task name and a closure. For example:
+     ```groovy
+     task myTask {
+         doLast {
+             println 'Hello, Gradle!'
+         }
+     }
+     ```
+
+7. What are Gradle plugins and how do you apply them?
+   Gradle plugins add new tasks and capabilities to a build. You can apply a plugin using the `apply plugin` syntax. For example, to apply the Java plugin:
+     ```groovy
+     apply plugin: 'java'
+     ```
+
+8. Explain the concept of a multi-project build in Gradle.
+   A multi-project build in Gradle allows you to manage multiple related projects within a single build. 
+   Each project can have its own build script, and dependencies between projects can be managed easily.
+
+9. What is a Gradle build script?
+   A Gradle build script is a file (usually named `build.gradle` or `build.gradle.kts`) that contains the instructions for building a project. 
+   It is written in Groovy or Kotlin and defines tasks, dependencies, and other build configurations.
+
+10. How do you handle dependencies in Gradle?
+    Dependencies in Gradle are handled using the `dependencies` block in the build script. You can specify dependencies for different configurations (e.g., `implementation`, `testImplementation`). 
+    For example:
+      ```groovy
+      dependencies {
+          implementation 'org.springframework:spring-core:5.3.8'
+          testImplementation 'junit:junit:4.13.2'
+      }
+      ```
